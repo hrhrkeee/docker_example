@@ -1,2 +1,2 @@
 # docker_example
-Docker勉強用
+Dockerの勉強用で使うこととする
