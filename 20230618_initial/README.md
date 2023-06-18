@@ -2,6 +2,8 @@
 
 Dockerの基本的な使い方を学ぶ
 
+<br><br>
+
 # とりあえずサンプルをビルド・起動・実行・終了・削除
 ## ビルド
 ```
@@ -16,7 +18,7 @@ docker run -it docker_ubuntu bash
 ```
 $ exit
 ```
-## コンテナに名前をつけてバックグラウンドで実行・bash
+## コンテナに名前をつけてバックグラウンドで実行
 ```
 docker run -d -it --name docker_test docker_ubuntu
 ```
@@ -42,6 +44,7 @@ docker rm docker_test
 docker rmi docker_ubuntu
 ```
 
+<br><br>
 
 # Dockerの使い方
 ## Dockerfileのビルド方法
@@ -62,6 +65,8 @@ docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
  - -it ： コンテナ内で操作
  - -v ： ボリュームのマウント
  - --restart always ： 自動再起動
+ - --env DISPLAY=$DISPLAY： コンテナ上にいるTerminalから画像表示用のウィンドウを表示
+ - --device /dev/video0 ： Webカメラにアクセス
 
 ### 実行中コンテナ内部に入る（コマンド）
 ```
