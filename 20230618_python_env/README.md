@@ -57,6 +57,7 @@ docker image build -t イメージ名[:タグ名] [Dockerfileが配置されて�
 ### 基本コマンド
 ```
 docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+docker run --name {コンテナ名} -it {image名} /bin/bash
 ```
 ### オプション
  - --name : コンテナ名を指定
