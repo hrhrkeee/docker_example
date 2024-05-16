@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  app:
+    image: $IMAGE_NAME
+    container_name: $CONTAINER_NAME
+    env_file:
+      - .env
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - UBUNTU_GROUP_NAME=$UBUNTU_GROUP_NAME
+        - UBUNTU_USER_NAME=$UBUNTU_USER_NAME
+        - UBUNTU_USER_PASSWORD=$UBUNTU_USER_PASSWORD
+    volumes:
+      - ./nginx/html:/usr/share/nginx/html
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./volume:/home/${UBUNTU_USER_NAME}/volume
+    ports:
+      - "8080:80"
+    tty: true
+    command: "sudo nginx"
